@@ -16,4 +16,8 @@ class AvatarUploader < CarrierWave::Uploader::Base
      process :resize_to_limit => [100, 100]
   end
 
+  def default_url
+    "/images/fallback/" + [version_name, "default.png"].compact.join('_')
+  end
+  
 end
