@@ -56,6 +56,18 @@ describe "Users" do
       page.should have_content("Douglas")
       page.should have_content("Sair")
     end
+    
+    it "sign in user without name" do
+      User.create!({:email => "douglasdoro@gmail.com", :password => "123456" })
+                    
+      visit new_user_session_path
+      fill_in "E-mail", :with => "douglasdoro@gmail.com"
+      fill_in "Senha", :with => "123456"
+      click_button "Entrar"              
+      page.should have_content("Fez login com sucesso.")
+      page.should have_content("douglasdoro@gmail.com")
+      page.should have_content("Sair")
+    end
   end
   
   describe "DELETE /sign_out " do 

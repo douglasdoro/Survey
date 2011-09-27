@@ -13,7 +13,8 @@
 				<ul>
 				<% if user_signed_in? %>
 				  <li>
-				   	<%= current_user.name %> | <%= link_to "Sair", destroy_user_session_path, :method => :delete %>        
+				   	<%= link_to(current_user.name.present? ? current_user.name : current_user.email, user_path(current_user)) %> |
+				 		<%= link_to "Sair", destroy_user_session_path, :method => :delete %>        
 				  </li>	
 				<% else %>
 				  <li>

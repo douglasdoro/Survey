@@ -1,26 +1,28 @@
+<h3>Editar usuário</h3>
+
 <%= form_for @user, :html => { :multipart => true} do |f| %>
-  <% if @user.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@user.errors.count, "error") %> errors: </h2>
-
-      <ul>
-      <% @user.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
   <div class="field">
-    <%= f.label :name %><br />
+    <%= f.label :name %>
     <%= f.text_field :name %>
   </div>
 
+	<div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
   <div class="field">
-    <%= f.label :avatar %><br />
+    <%= f.label :avatar %>
     <%= f.file_field :avatar %>
   </div> 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Atualizar" %>
   </div>
 <% end %>
+
+<p>
+	<%= link_to "Alterar senha", edit_user_registration_path %> |
+	<%= link_to "Deletar conta", registration_path(@user),
+	 	:confirm => "Tem certeza que deseja remover sua conta?", :method => :delete %> |
+		<%= link_to "Voltar", :back %>
+</p>

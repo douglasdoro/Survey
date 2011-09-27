@@ -1,0 +1,7 @@
+<h1>Usuário</h1>
+<p><%= image_tag @user.avatar.url(:thumb) %></p>
+<p>Nome: <%= @user.name %></p>
+<p>E-mail: <%= @user.email %></p>
+<p><%= link_to "Editar", edit_user_path(@user) %> | <%= link_to "Voltar", :back %></p>
+
+
