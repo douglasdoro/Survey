@@ -7,22 +7,28 @@
 	  <%= csrf_meta_tag %>
 	</head>
 	<body>
-		<ul>
-		<% if user_signed_in? %>
-		  <li>
-		   	<%= current_user.name %> | <%= link_to('Sair', destroy_user_session_path, :method => :delete) %>        
-		  </li>	
-		<% else %>
-		  <li>
-		  <%= link_to('Entrar', new_user_session_path)  %> | <%= link_to "Registrar-se", new_user_registration_path  %> 
-		  </li>
-		<% end %>
-		</ul>
-
-		<p class="notice"><%= notice %></p>
-		<p class="alert"><%= alert %></p>
-
-		<%= yield %>
-
+		<div id="main">
+			<div id="header">
+				<h1><%= link_to "MiniApp Surveys", root_path %></h1>
+				<ul>
+				<% if user_signed_in? %>
+				  <li>
+				   	<%= current_user.name %> | <%= link_to "Sair", destroy_user_session_path, :method => :delete %>        
+				  </li>	
+				<% else %>
+				  <li>
+				  <%= link_to "Entrar", new_user_session_path %> | <%= link_to "Registrar-se", new_user_registration_path  %> 
+				  </li>
+				<% end %>
+				</ul>
+				<div>
+					<p class="notice"><%= notice %></p>
+					<p class="alert"><%= alert %></p>
+				</div>
+			</div>
+			<div id="content">
+				<%= yield %>
+			</div>
+		</div>
 	</body>
 </html>

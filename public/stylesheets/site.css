@@ -1,0 +1,19 @@
+* { margin: 0; padding: 0; }
+
+ul { list-style: none;}
+
+body 						 { background: #EBE0D6; border-top: 60px solid #B89470; color: #333; }
+body, p, ul, td  { font-family: verdana, arial, helvetica, sans-serif; font-size: 13px; line-height: 18px; }
+
+#main { width: 900px; margin: -60px auto 0 auto; }
+
+#header 							{ height: 60px; }
+#header h1 						{ padding: 25px 0 0 10px; display: inline; float: left; }
+#header h1 a:visited 	{ color: #CCCC00; }
+#header ul 						{ float: right; margin: 10px; }
+#header a 						{ color: #FFF; text-decoration: none;}
+#header a:visited 		{ color: #FFF; }
+#header a:hover 			{ color: #CCC; }
+
+.notice { color: green; }
+.alert  { color: red; }
