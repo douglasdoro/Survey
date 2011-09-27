@@ -10,9 +10,10 @@ gem 'carrierwave'
 
 gem 'mini_magick'
 
-
 group :development, :test do
   gem 'rspec-rails'
   gem 'capybara'
   gem 'launchy'
+  
+  gem 'ffaker'
 end
