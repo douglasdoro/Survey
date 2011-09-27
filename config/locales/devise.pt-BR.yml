@@ -4,7 +4,10 @@ pt-BR:
       not_found: "não encontrado"
       already_confirmed: "já foi confirmado"
       not_locked: "não foi bloqueado"
-
+      not_saved:
+        one: "1 erro impediu que %{resource} fosse gravado:"
+        other: "%{count} erros impediram que %{resource} fosse gravado:"
+      
   devise:
     failure:
       unauthenticated: 'Para continuar, faça login ou registre-se.'
