@@ -4,16 +4,13 @@ class SurveysController < ApplicationController
   # OPTIMIZE
   def index
     if current_user
-      if params[:filter] == "my_surveys"
-        return @surveys = Survey.my(current_user)
-      elsif params[:filter] =="watching"
-        return @surveys = Survey.watching(current_user)
-      end  
+      return @surveys = Survey.try(params[:filter], current_user)
     end
     
     @surveys = Survey.includes(:questions).published
   end
 
+  #TODO: only publish
   def show
     @survey = Survey.find(params[:id])
     @questions = @survey.questions.includes(:answers) 
