@@ -12,7 +12,7 @@ gem 'mini_magick'
 
 gem "simple_form"
 
-group => :development do
+group :development do
   gem 'ffaker'
   gem 'populator'
 end
