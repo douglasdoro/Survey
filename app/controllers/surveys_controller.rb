@@ -4,7 +4,11 @@ class SurveysController < ApplicationController
   # OPTIMIZE
   def index
     if current_user
-      return @surveys = Survey.try(params[:filter], current_user)
+      if params[:filter]
+        return @surveys = Survey.try(params[:filter], current_user)
+      end
+  
+      return @surveys = Survey.includes(:questions)  
     end
     
     @surveys = Survey.includes(:questions).published
