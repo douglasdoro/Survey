@@ -22,13 +22,22 @@
 				  </li>
 				<% end %>
 				</ul>
-				<div>
-					<p class="notice"><%= notice %></p>
-					<p class="alert"><%= alert %></p>
-				</div>
 			</div>
 			<div id="content">
+				<% if current_user %>
+				<div id="menu">
+					<%= link_to "Nova pesquisa", new_survey_path %>
+					<ul>
+						<li><%= link_to "Minhas pesquisas", surveys_path(:query => :my) %></li>
+						<li><%= link_to "Pesquisas que acompanho", "#" %></li>
+					</ul>
+				</div>
+				<% end %>
+				<p class="notice"><%= notice %></p>
+				<p class="alert"><%= alert %></p>
+				
 				<%= yield %>
+				
 			</div>
 		</div>
 	</body>

@@ -2,6 +2,10 @@
 
 ul { list-style: none;}
 
+a 					{ color: #996600; }
+a:visited 	{ color: #996600; }
+a:hover 		{ color: #CCCC00; }
+
 body 						 { background: #EBE0D6; border-top: 60px solid #B89470; color: #333; }
 body, p, ul, td  { font-family: verdana, arial, helvetica, sans-serif; font-size: 13px; line-height: 18px; }
 
@@ -13,18 +17,20 @@ body, p, ul, td  { font-family: verdana, arial, helvetica, sans-serif; font-size
 #header ul 						{ float: right; margin: 10px; }
 #header a 						{ color: #FFF; text-decoration: none; }
 #header a:visited 		{ color: #FFF; }
-#header a:hover 			{ color: #CCC; }
+#header a:hover 			{ color: #CCCC00; }
 
-.notice { color: green; }
-.alert  { color: red; }
+.notice, .alert { padding: 5px; text-align: center; color: green; }
+.alert { color: red; }
 
 .surveys 						{ background: #F2F2C0; padding: 10px; 	margin-top: 10px; }
 .surveys h3					{ color: #996600; }
-.surveys a 					{ color: #996600; text-decoration: none; }
-.surveys a:visited 	{ color: #996600; }
-.surveys a:hover 		{ color: #CCC; }
 .surveys small 			{	display: block; color: #AD855C; }
 
 .questions { border: 1px solid #996600; margin: 10px; padding: 10px; }
 
 .answers { background: #cccf00; padding: 10px; margin-top: 10px; }
+
+#menu 				{ padding: 5px; }
+#menu ul 			{ float: right;}
+#menu ul li 	{ float: left;}
+#menu ul li a { margin-left: 10px; }

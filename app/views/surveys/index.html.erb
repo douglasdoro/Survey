@@ -1,5 +1,3 @@
-<p><%= link_to "Nova pesquisa", new_survey_path %></p>
-
 <% @surveys.each do |survey| %>
   <div class="surveys">
     <h3><%= link_to survey.name.titleize , survey %></h3> 
