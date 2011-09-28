@@ -1,8 +1,17 @@
 class SurveysController < ApplicationController
   before_filter  :authenticate_user!, :except => [:index, :show]
   
+  # OPTIMIZE
   def index
-    @surveys = Survey.all
+    if current_user
+      if params[:filter] == "my_surveys"
+        return @surveys = Survey.my(current_user)
+      elsif params[:filter] =="watching"
+        return @surveys = Survey.watching(current_user)
+      end  
+    end
+    
+    @surveys = Survey.includes(:questions).published
   end
 
   def show

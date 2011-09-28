@@ -10,4 +10,14 @@ class Survey < ActiveRecord::Base
   
   validates :name, :presence => true
   validates :user, :presence => true
+  
+  scope :published, where(:published => true)
+
+  def self.watching(user)
+    includes(:questions).where(:id => user.watches).published
+  end
+  
+  def self.my(user)
+    user.surveys.includes(:questions)
+  end
 end
