@@ -1,5 +1,5 @@
 <%= simple_form_for @survey do |f| %>
-  <%= f.input :name %>
+	<%= f.input :name %>
   <%= f.input :description, :input_html => { :rows => 4} %>
 	<%= f.simple_fields_for :questions do |builder| %>
 		<%= render 'question_fields', :f => builder %>

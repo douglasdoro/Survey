@@ -30,6 +30,7 @@ class SurveysController < ApplicationController
 
   def create
     @survey = Survey.new(params[:survey])
+    @survey.user_id = current_user
     if @survey.save
       redirect_to @survey, :notice => "Pesquisa criada com sucesso."
     else
