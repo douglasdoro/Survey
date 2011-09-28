@@ -17,3 +17,13 @@ body, p, ul, td  { font-family: verdana, arial, helvetica, sans-serif; font-size
 
 .notice { color: green; }
 .alert  { color: red; }
+
+.surveys 						{ background: #F2F2C0; padding: 10px; 	margin-top: 10px; }
+.surveys a 					{ color: #996600; text-decoration: none;}
+.surveys a:visited 	{ color: #996600; }
+.surveys a:hover 		{ color: #CCC; }
+.surveys small 			{	display: block; color: #AD855C; }
+
+.questions { border: 1px solid #000; margin: 10px; padding: 10px; }
+
+.answers { background: #cccf00; padding: 10px; margin-top: 10px; }
