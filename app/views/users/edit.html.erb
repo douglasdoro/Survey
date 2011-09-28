@@ -1,25 +1,14 @@
 <h3>Editar usuário</h3>
+<br/>
 
-<%= form_for @user, :html => { :multipart => true} do |f| %>
-  <div class="field">
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </div>
-
-	<div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </div>
-
-  <div class="field">
-    <%= f.label :avatar %>
-    <%= f.file_field :avatar %>
-  </div> 
-  <div class="actions">
-    <%= f.submit "Atualizar" %>
-  </div>
+<%= simple_form_for @user, :html => { :multipart => true} do |f| %>
+    <%= f.input :name,  :label => "Nome" %>
+    <%= f.input :email, :lavel => "E-mail" %>
+    <%= f.input :avatar %>
+    <%= f.button :submit, "Atualizar" %>
 <% end %>
 
+<br/>
 <p>
 	<%= link_to "Alterar senha", edit_user_registration_path %> |
 	<%= link_to "Deletar conta", registration_path(@user),

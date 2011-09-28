@@ -32,7 +32,7 @@ describe "Users" do
       fill_in "Nome", :with => "Douglas"
       fill_in "E-mail", :with => "douglasdoro@gmail.com"
       fill_in "Senha", :with => "123456"
-      fill_in "Confirmar senha", :with => "123456"
+      fill_in "Confirmar", :with => "123456"
       click_button "Registrar"
       
       current_path.should == root_path
