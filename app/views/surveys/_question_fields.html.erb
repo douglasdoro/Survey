@@ -1,0 +1,7 @@
+<%= f.input 		:content, :label => "Pergunta" %>
+<%#= f.check_box :_destroy %>
+<%#= f.label "remover" %>
+
+<%= f.simple_fields_for :answers do |builder| %>
+	<%= render 'answer_fields', :f => builder %>
+<% end %>

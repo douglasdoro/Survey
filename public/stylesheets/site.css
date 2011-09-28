@@ -11,7 +11,7 @@ body, p, ul, td  { font-family: verdana, arial, helvetica, sans-serif; font-size
 #header h1 						{ padding: 25px 0 0 10px; display: inline; float: left; }
 #header h1 a:visited 	{ color: #CCCC00; }
 #header ul 						{ float: right; margin: 10px; }
-#header a 						{ color: #FFF; text-decoration: none;}
+#header a 						{ color: #FFF; text-decoration: none; }
 #header a:visited 		{ color: #FFF; }
 #header a:hover 			{ color: #CCC; }
 
@@ -19,11 +19,12 @@ body, p, ul, td  { font-family: verdana, arial, helvetica, sans-serif; font-size
 .alert  { color: red; }
 
 .surveys 						{ background: #F2F2C0; padding: 10px; 	margin-top: 10px; }
-.surveys a 					{ color: #996600; text-decoration: none;}
+.surveys h3					{ color: #996600; }
+.surveys a 					{ color: #996600; text-decoration: none; }
 .surveys a:visited 	{ color: #996600; }
 .surveys a:hover 		{ color: #CCC; }
 .surveys small 			{	display: block; color: #AD855C; }
 
-.questions { border: 1px solid #000; margin: 10px; padding: 10px; }
+.questions { border: 1px solid #996600; margin: 10px; padding: 10px; }
 
 .answers { background: #cccf00; padding: 10px; margin-top: 10px; }
