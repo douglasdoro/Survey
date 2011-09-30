@@ -22,10 +22,8 @@ class SurveysController < ApplicationController
 
   def new
     @survey = Survey.new
-    2.times do
-      question = @survey.questions.build 
-      2.times { question.answers.build }
-    end
+    question = @survey.questions.build 
+    question.answers.build
   end
 
   def create

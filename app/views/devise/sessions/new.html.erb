@@ -4,8 +4,8 @@
 
 <%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
  
-	<%= f.input :email, :label => "E-mail" %>
-	<%= f.input :password, :label => "Senha" %>
+	<%= f.input :email,    :label => "E-mail", :required => true %>
+	<%= f.input :password, :label => "Senha",  :required => true %>
   <% # TODO: fixed checkbox %>
 	<%# if devise_mapping.rememberable? -%>
     <%#= f.input :remember_me %> 

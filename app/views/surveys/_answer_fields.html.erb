@@ -1,3 +1,4 @@
-<%= f.input     :content, :label => "Resposta" %>
-<%#= f.check_box :_destroy %>
-<%#= f.label 		:_destroy, "Remove" %>
+<div class="fields">
+	<%= f.input     :content, :label => "Resposta" %>
+	<%= link_to_remove_fields "remove", f %>
+</div>

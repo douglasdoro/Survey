@@ -5,9 +5,9 @@
 <%= simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
   <%= devise_error_messages! %>
 	<%= f.input :name,     :label => "Nome" %>
-  <%= f.input :email,    :label => "E-mail" %>
-  <%= f.input :password, :label => "Senha" %>
-	<%= f.input :password_confirmation, :label => "Confirmar", :hint => "Confirmar senha" %>
+  <%= f.input :email,    :label => "E-mail", :required => true  %>
+  <%= f.input :password, :label => "Senha",  :required => true %>
+	<%= f.input :password_confirmation, :label => "Confirmar", :hint => "Confirmar senha", :required => true %>
 	<%= f.button :submit, "Registrar" %>
 <% end %>
 

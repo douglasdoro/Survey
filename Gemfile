@@ -12,6 +12,8 @@ gem 'mini_magick'
 
 gem "simple_form"
 
+gem "jquery-rails"
+
 group :development do
   gem 'ffaker'
   gem 'populator'

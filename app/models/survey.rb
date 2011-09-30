@@ -6,7 +6,7 @@ class Survey < ActiveRecord::Base
   has_many :watches
   has_many :users, :through => :watches
   
-  accepts_nested_attributes_for :questions, :allow_destroy => true
+  accepts_nested_attributes_for :questions, :allow_destroy => true, :reject_if => lambda { |at| at[:content].blank? }
   
   validates :name, :presence => true
   validates :user, :presence => true
