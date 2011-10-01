@@ -39,7 +39,7 @@ namespace :db do
       # Fill questions table
       Question.populate 1..2 do |question|
         question.survey_id = survey.id
-        question.content = Populator.words(5..8).titleize
+        question.content = Populator.words(5..8).titleize << "?"
 
         # Fill Answers table
         Answer.populate 1..4 do |answer|

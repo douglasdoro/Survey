@@ -3,6 +3,32 @@
     <h3><%= link_to survey.name.titleize , survey %></h3> 
     <small><%= survey.description.titleize %></small>
 		<%= render 'survey_links', :survey => survey %>
+		<% survey.questions.each do |question| %>
+      <ul>
+        <li>
+					<%= question.id %><strong><%= question.content %></strong>(<%= pluralize(question.total, "Respostas") %>)
+				</li>
+        <% if current_user and not question.already_responded?(current_user) %>
+          <%= form_for @choice do |f| %>
+            <% question.answers.each do |answer| %>
+              <li><label><%= f.radio_button :answer_id, answer.id %></label><%= answer.content %></li>
+            <% end %>
+            <%= f.submit "Responder" %>
+          <% end %>
+        <% else %>
+					<% question.answers.each do |answer| %>
+						<li>
+	            <span style="display: block;">
+	              <%= answer.content %>
+	            </span>
+	            <span class="bar">
+								<span style="width:<%= sprintf("%2.f%", answer.percentage) %>;"></span>
+							</span>
+	            <span class="percent"><%= sprintf("%2.f%", answer.percentage) %></span>
+	         </li>
+	        <% end %>
+        <% end %>
+      </ul>
+    <% end  %>
   </div>
 <% end %>
-

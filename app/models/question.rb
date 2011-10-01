@@ -6,4 +6,12 @@ class Question < ActiveRecord::Base
   
   accepts_nested_attributes_for :answers, :allow_destroy => true, :reject_if => lambda { |at| at[:content].blank? } 
   
+  def already_responded?(user)
+    (user.choices.map(&:answer_id) & self.answer_ids).any?
+  end
+  
+  def total
+    self.answers.map(&:choice_ids).flatten.compact.count
+  end
+  
 end

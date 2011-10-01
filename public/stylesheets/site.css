@@ -34,3 +34,11 @@ body, p, ul, td  { font-family: verdana, arial, helvetica, sans-serif; font-size
 #menu ul 			{ float: right;}
 #menu ul li 	{ float: left;}
 #menu ul li a { margin-left: 10px; }
+
+.bar, .bar span { border: 1px solid blue; display: inline-block; width: 200px; height: 10px;" }
+.bar span 			{ border:none; background: red; display: block; }
+.percent    		{ display: inline-block; }
+
+
+
+

@@ -12,5 +12,7 @@ MiniAppSurvey::Application.routes.draw do
       put 'toggle_watch'
     end
   end
+  
+  resources :choices, :only => [:create]
     
 end

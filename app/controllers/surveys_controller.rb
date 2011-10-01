@@ -1,8 +1,12 @@
+# encoding: utf-8
+
 class SurveysController < ApplicationController
   before_filter  :authenticate_user!, :except => [:index, :show]
   
   # OPTIMIZE
   def index
+    @choice = Choice.new
+
     if current_user
       if params[:filter]
         return @surveys = Survey.try(params[:filter], current_user)
@@ -28,7 +32,7 @@ class SurveysController < ApplicationController
 
   def create
     @survey = Survey.new(params[:survey])
-    @survey.user_id = current_user
+    @survey.user_id = current_user.id
     if @survey.save
       redirect_to @survey, :notice => "Pesquisa criada com sucesso."
     else
