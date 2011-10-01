@@ -11,6 +11,11 @@ MiniAppSurvey::Application.routes.draw do
       put 'toggle_publish' 
       put 'toggle_watch'
     end
+    
+    collection do
+      get 'watch'
+      get 'my'
+    end
   end
   
   resources :choices, :only => [:create]

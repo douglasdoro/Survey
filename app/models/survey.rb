@@ -13,7 +13,7 @@ class Survey < ActiveRecord::Base
   scope :published, where(:published => true)
 
   def self.watching(user)
-    includes(:questions).where(:id => user.watches.map(&:survey_id)).published
+    includes(:questions).where(:id => user.watches.map(&:survey_id))
   end
   
   def self.my(user)

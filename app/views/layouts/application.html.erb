@@ -28,8 +28,8 @@
 				<div id="menu">
 					<%= link_to "Nova pesquisa", new_survey_path %>
 					<ul>
-						<li><%= link_to "Minhas pesquisas", surveys_path(:filter => :my) %></li>
-						<li><%= link_to "Pesquisas que acompanho", surveys_path(:filter => :watching) %></li>
+						<li><%= link_to "Minhas pesquisas", my_surveys_path %></li>
+						<li><%= link_to "Pesquisas que acompanho", watch_surveys_path %></li>
 					</ul>
 				</div>
 				<% end %>

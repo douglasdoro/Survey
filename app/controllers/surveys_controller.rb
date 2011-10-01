@@ -5,17 +5,8 @@ class SurveysController < ApplicationController
   
   # OPTIMIZE
   def index
-    @choice = Choice.new
-
-    if current_user
-      if params[:filter]
-        return @surveys = Survey.try(params[:filter], current_user)
-      end
-  
-      return @surveys = Survey.includes(:questions)  
-    end
-    
-    @surveys = Survey.includes(:questions).published
+    @choice = Choice.new        
+    @surveys = Survey.includes(:questions) #.published
   end
 
   #TODO: only publish
@@ -79,4 +70,19 @@ class SurveysController < ApplicationController
     
     redirect_to :back
   end
+  
+  def watch
+    @choice = Choice.new
+    @surveys = Survey.watching current_user
+
+    render :index
+  end
+  
+  def my
+    @choice = Choice.new
+    @surveys = Survey.my current_user
+    
+    render :index
+  end
+  
 end

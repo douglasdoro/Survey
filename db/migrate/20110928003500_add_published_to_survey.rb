@@ -1,6 +1,6 @@
 class AddPublishedToSurvey < ActiveRecord::Migration
   def self.up
-    add_column :surveys, :published, :boolean
+    add_column :surveys, :published, :boolean, :default => false
   end
 
   def self.down

@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(:version => 20110930053538) do
     t.text     "description"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.boolean  "published"
+    t.boolean  "published",   :default => false
   end
 
   create_table "users", :force => true do |t|

@@ -5,7 +5,7 @@ class ChoicesController < ApplicationController
   
   def create
     @choice = Choice.new params[:choice]
-    @choice.user_id = current_user
+    @choice.user_id = current_user.id
     
     if @choice.save
       redirect_to :back, :notice => "Pesquisa respondida com sucesso."
