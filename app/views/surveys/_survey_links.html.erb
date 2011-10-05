@@ -1,9 +1,11 @@
 <% if user_signed_in? %>
 	<% if survey.user_id.eql? current_user.id %>
+		<div class="manager">
 		<%= link_to 'Editar', edit_survey_path(survey) %> |
 	  <%= link_to 'Excluir', survey, :confirm => 'Tem certeza que deseja excluir?', :method => :delete %> |
 		<%= link_to  survey.published? ? "Despublicar" : "Publicar", toggle_publish_survey_path(survey), :method => :put  %>
 		<% if survey.watches.any? %>
+			<h4>Pessoas que acompanham essa pesquisa</h4>
 			<ul class="watches">
 				<% survey.watches.each do |watch| %>
 					<li>
@@ -13,5 +15,6 @@
 				<% end %>
 			</ul>
 		<% end %>
+		</div>
 	<% end %>
 <% end %>

@@ -7,18 +7,21 @@
 		    <h3><%= link_to survey.name.titleize , survey %></h3> 
 		    <%= link_to(survey.watches.map(&:user_id).include?(current_user.id) ? "unwatch" : "watch",
 				 						 toggle_watch_survey_path(survey), :method => :put, :class => "watch_unwatch") if user_signed_in?  %>
-				<small><%= survey.description.titleize %></small>
+				<small><b>Descrição:</b>&nbsp;<%= survey.description.titleize %></small>
 				
 				<%= render 'survey_links', :survey => survey %>
+				
+				<h4>Pergunta(s) dessa pesquisa</h4>
+								
 				<% survey.questions.each do |question| %>
-		      <ul>
+		      <ul class="questions">
 		        <li>
 							<strong><%= question.content %></strong>(<%= pluralize(question.total, "Respostas") %>)
 						</li>
 		        <% if current_user and not question.already_responded?(current_user) %>
 		          <%= form_for @choice do |f| %>
 		            <% question.answers.each do |answer| %>
-		              <li><label><%= f.radio_button :answer_id, answer.id %></label><%= answer.content %></li>
+		              <li><%= f.radio_button :answer_id, answer.id %>&nbsp;&nbsp;<%= answer.content.titleize %></li>
 		            <% end %>
 		            <%= f.submit "Responder" %>
 		          <% end %>
@@ -26,7 +29,7 @@
 							<% question.answers.each do |answer| %>
 								<li>
 			            <span style="display: block;">
-			              <%= answer.content %>
+			              <%= answer.content.titleize %>
 			            </span>
 			            <span class="bar">
 										<span style="width:<%= sprintf("%2.f%", answer.percentage) %>;"></span>
