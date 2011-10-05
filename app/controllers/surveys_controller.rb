@@ -70,15 +70,16 @@ class SurveysController < ApplicationController
   end
   
   def watch
-    @choice = Choice.new
+    @choice  = Choice.new
     @surveys = Survey.watching current_user
-
+    @title   = "Pesquisas que acompanho(watch)"
     render :index
   end
   
   def my
-    @choice = Choice.new
+    @choice  = Choice.new
     @surveys = Survey.my current_user
+    @title   = "Minha pesquisas"
     
     render :index
   end

@@ -1,3 +1,5 @@
+<%= title(@title) %>
+
 <% if @surveys.any? %>
 	<% @surveys.reverse.each do |survey| %>
 	  <% if show_survey(survey) %>

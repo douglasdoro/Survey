@@ -17,5 +17,11 @@ module ApplicationHelper
 		else
 			survey.published?
 		end
+  end
+  
+  def title(page_title)
+    content_for :title do
+    	page_title
+    end
   end  
 end
