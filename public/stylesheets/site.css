@@ -19,8 +19,8 @@ body, p, ul, td  { font-family: verdana, arial, helvetica, sans-serif; font-size
 #header a:visited 		{ color: #FFF; }
 #header a:hover 			{ color: #CCCC00; }
 
-.notice, .alert { padding: 5px; text-align: center; color: green; }
-.alert { color: red; }
+.notice, .alert { padding: 5px; text-align: center; color: #6C6; border: 1px solid #6C6; background: #CFC; }
+.alert 					{ color: #C66; background: #FCC; border: solid 1px #C66; }
 
 .surveys 						{ background: #F2F2C0; padding: 10px; 	margin-top: 10px; }
 .surveys h3					{ color: #996600; }

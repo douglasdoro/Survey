@@ -10,7 +10,7 @@ class ChoicesController < ApplicationController
     if @choice.save
       redirect_to :back, :notice => "Pesquisa respondida com sucesso."
     else
-      redirect_to :back, :alert => @choice.errors # "Não foi possível gravar sua resposta. Por favor, tente novamente."
+      redirect_to :back, :alert => "Não foi possível gravar sua resposta. Por favor, tente novamente."
     end
   end
 end

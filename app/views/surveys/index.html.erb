@@ -6,7 +6,7 @@
 		<% survey.questions.each do |question| %>
       <ul>
         <li>
-					<%= question.id %><strong><%= question.content %></strong>(<%= pluralize(question.total, "Respostas") %>)
+					<strong><%= question.content %></strong>(<%= pluralize(question.total, "Respostas") %>)
 				</li>
         <% if current_user and not question.already_responded?(current_user) %>
           <%= form_for @choice do |f| %>
