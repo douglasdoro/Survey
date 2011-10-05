@@ -3,7 +3,10 @@
 	  <% if show_survey(survey) %>
 			<div class="surveys">
 		    <h3><%= link_to survey.name.titleize , survey %></h3> 
-		    <small><%= survey.description.titleize %></small>
+		    <%= link_to(survey.watches.map(&:user_id).include?(current_user.id) ? "unwatch" : "watch",
+				 						 toggle_watch_survey_path(survey), :method => :put, :class => "watch_unwatch") if user_signed_in?  %>
+				<small><%= survey.description.titleize %></small>
+				
 				<%= render 'survey_links', :survey => survey %>
 				<% survey.questions.each do |question| %>
 		      <ul>

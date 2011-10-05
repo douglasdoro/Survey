@@ -1,3 +1,50 @@
+* { margin: 0; padding: 0; }
+
+ul { list-style: none;}
+
+a 					{ color: #996600; }
+a:visited 	{ color: #996600; }
+a:hover 		{ color: #CCCC00; }
+
+body 						 { background: #EBE0D6; border-top: 60px solid #B89470; color: #333; }
+body, p, ul, td  { font-family: verdana, arial, helvetica, sans-serif; font-size: 13px; line-height: 18px; }
+
+#main { width: 900px; margin: -60px auto 10px auto; background: #fff; padding-bottom: 10px;}
+
+#header 							{ height: 60px; background: #B89470; }
+#header h1 						{ padding: 25px 0 0 10px; display: inline; float: left; }
+#header h1 a:visited 	{ color: #CCCC00; }
+#header ul 						{ float: right; margin: 10px; }
+#header a 						{ color: #FFF; text-decoration: none; }
+#header a:visited 		{ color: #FFF; }
+#header a:hover 			{ color: #CCCC00; }
+
+.notice, .alert { padding: 5px; text-align: center; color: #6C6; border: 1px solid #6C6; background: #CFC; margin: 10px 10px 0; }
+.alert 					{ color: #C66; background: #FCC; border: solid 1px #C66; }
+
+.surveys 						{ background: #F2F2C0; padding: 10px; margin: 10px 10px 0; }
+.surveys h3					{ color: #996600; }
+.surveys small 			{	display: block; color: #AD855C; }
+
+.watch_unwatch	{ background: #fff; border: 1px solid #B89470; float: right; margin-top: -20px; padding: 5px; }
+
+.watches		{ background: #fff; border: 1px dotted #CCCC00; padding: 5px 5px 1px 10px; margin: 5px; }
+.watches li	{ margin-left: -5px; margin-right: 5px; display: inline;}
+
+.questions { border: 1px solid #996600; margin: 10px; padding: 10px; }
+
+.answers { background: #cccf00; padding: 10px; margin-top: 10px; }
+
+#menu 				{ padding: 5px; }
+#menu ul 			{ float: right;}
+#menu ul li 	{ float: left;}
+#menu ul li a { margin-left: 10px; }
+
+.bar, .bar span { border: 1px solid blue; display: inline-block; width: 200px; height: 10px;" }
+.bar span 			{ border:none; background: red; display: block; }
+.percent    		{ display: inline-block; }
+
+
 /* Simple form */
 .simple_form label {
   float: left;

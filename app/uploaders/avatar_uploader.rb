@@ -10,10 +10,18 @@ class AvatarUploader < CarrierWave::Uploader::Base
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
   end
 
-#  process :resize_to_fill => [200, 200]
+  def extension_white_list
+    %w(jpg jpeg gif png)
+  end
+ 
+  process :resize_to_fill => [400, 400]
 
   version :thumb do
-     process :resize_to_limit => [100, 100]
+     process :resize_to_limit => [140, 140]
+  end
+  
+  version :mini do
+     process :resize_to_limit => [40, 40]
   end
 
   def default_url

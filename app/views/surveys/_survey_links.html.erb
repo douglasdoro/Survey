@@ -2,9 +2,16 @@
 	<% if survey.user_id.eql? current_user.id %>
 		<%= link_to 'Editar', edit_survey_path(survey) %> |
 	  <%= link_to 'Excluir', survey, :confirm => 'Tem certeza que deseja excluir?', :method => :delete %> |
-		<%= link_to  survey.published? ? "Despublicar" : "Publicar", toggle_publish_survey_path(survey), :method => :put  %> |
+		<%= link_to  survey.published? ? "Despublicar" : "Publicar", toggle_publish_survey_path(survey), :method => :put  %>
+		<% if survey.watches.any? %>
+			<ul class="watches">
+				<% survey.watches.each do |watch| %>
+					<li>
+						<%= link_to image_tag(watch.user.avatar.url(:mini), :alt => watch.user.name),
+						 user_path(watch.user), :title => watch.user.name %>
+					</li>
+				<% end %>
+			</ul>
+		<% end %>
 	<% end %>
-
-	<%= link_to  survey.watches.map(&:user_id).include?(current_user.id) ? "unwatch" : "watch",
-	 						 toggle_watch_survey_path(survey), :method => :put  %> 
 <% end %>
