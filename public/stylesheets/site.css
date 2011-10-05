@@ -6,7 +6,7 @@ a 					{ color: #996600; }
 a:visited 	{ color: #996600; }
 a:hover 		{ color: #CCCC00; }
 
-body 						 { background: #EBE0D6; border-top: 60px solid #B89470; color: #333; }
+body 						 { background: #EBE0D6; border-top: 60px solid #B89470; color: #333; padding-bottom: 10px; }
 body, p, ul, td  { font-family: verdana, arial, helvetica, sans-serif; font-size: 13px; line-height: 18px; }
 
 #main { width: 900px; margin: -60px auto 0 auto; }

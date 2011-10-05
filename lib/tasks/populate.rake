@@ -42,12 +42,17 @@ namespace :db do
         question.content = Populator.words(5..8).titleize << "?"
 
         # Fill Answers table
-        Answer.populate 1..4 do |answer|
+        Answer.populate 2..4 do |answer|
           answer.question_id = question.id
           answer.content = Populator.words(5..8).titleize
         end        
       end
     end
     
+    200.times do 
+      user = User.order("RANDOM()").first
+      user.choices.build :answer_id => Answer.order("RANDOM()").first.id
+      user.save
+    end
   end
 end

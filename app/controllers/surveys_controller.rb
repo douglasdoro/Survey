@@ -3,13 +3,11 @@
 class SurveysController < ApplicationController
   before_filter  :authenticate_user!, :except => [:index, :show]
   
-  # OPTIMIZE
   def index
     @choice = Choice.new        
-    @surveys = Survey.includes(:questions) #.published
+    @surveys = Survey.includes(:questions)
   end
 
-  #TODO: only publish
   def show
     @survey = Survey.find(params[:id])
     @questions = @survey.questions.includes(:answers) 
