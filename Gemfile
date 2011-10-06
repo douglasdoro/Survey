@@ -25,4 +25,5 @@ group :development, :test do
   gem 'autotest'
   gem 'capybara'
   gem 'launchy'
+  gem 'factory_girl'
 end

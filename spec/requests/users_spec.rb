@@ -68,6 +68,21 @@ describe "Users" do
       page.should have_content("douglasdoro@gmail.com")
       page.should have_content("Sair")
     end
+    
+    it "should return login fail" do
+      pending
+      
+      Factory.find_definitions
+      
+      user = Factory(:user)
+                    
+      visit root_path
+      fill_in "E-mail", :with => user.email
+      fill_in "Senha", :with =>  user.password
+      click_button "Entrar"
+      
+      page.should have_content("Usuário ou senha inválidos")
+    end
   end
   
   describe "DELETE /sign_out " do 
@@ -85,5 +100,6 @@ describe "Users" do
       page.should have_content("Entrar")
       page.should have_content("Registrar-se")
     end
-  end  
+  end 
+  
 end
