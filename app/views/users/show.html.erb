@@ -1,13 +1,13 @@
-<h1>Usuário</h1>
+<% title("Usuário") %>
 
-<br/>
+<div class="user">
+	<p><%= image_tag @user.avatar.url(:thumb) %></p>
+	<p><b>Nome:</b> <%= @user.name %></p>
+	<p><b>E-mail:</b> <%= @user.email %></p>
 
-<p><%= image_tag @user.avatar.url(:thumb) %></p>
-<p>Nome: <%= @user.name %></p>
-<p>E-mail: <%= @user.email %></p>
-
-<br/>
-
-<p><%= link_to "Editar", edit_user_path(@user) %> | <%= link_to "Voltar", :back %></p>
-
+	<br/>
+	<% if current_user.id.eql? @user.id %>
+		<p><%= link_to "Editar", edit_user_path(@user) %> | <%= link_to "Voltar", :back %></p>
+	<% end %>
+</div>
 

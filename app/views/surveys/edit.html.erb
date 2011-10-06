@@ -1,6 +1,8 @@
-<% title "Edit Survey" %>
+<% title "Editar pesquisa: #{ @survey.name }" %>
 
-<%= render 'form' %>
+<div class="survey-form">
+	<%= render 'form', :btn_form => "Atualizar Pesquisa" %>
+</div>
 
 <p>
   <%= link_to "Show", @survey %> |

@@ -1,4 +1,6 @@
 <div class="fields">
-	<%= f.input     :content, :label => "Resposta" %>
-	<%= link_to_remove_fields "remove", f %>
+	<div class="question-field">
+		<%= f.input :content, :label => "Resposta", :wrapper_html => { :class => 'answer' } %>
+		<%= link_to_remove_fields "remover", f %>
+	</div>
 </div>

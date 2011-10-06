@@ -1,14 +1,14 @@
-<h2>Entrar</h2>
+<% title("Entrar") %>
 
-<br/>
-
-<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+<div class="user">
+	<%= simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
  
-	<%= f.input :email,    :label => "E-mail", :required => true %>
-	<%= f.input :password, :label => "Senha",  :required => true %>
-  <% # TODO: fixed checkbox %>
-	<%# if devise_mapping.rememberable? -%>
-    <%#= f.input :remember_me %> 
-  <%# end %>
-	<%= f.button :submit, "Entrar" %>
-<% end %>
+		<%= f.input :email,    :label => "E-mail", :required => true %>
+		<%= f.input :password, :label => "Senha",  :required => true %>
+	  <% # TODO: fixed checkbox %>
+		<%# if devise_mapping.rememberable? -%>
+	    <%#= f.input :remember_me %> 
+	  <%# end %>
+		<%= f.button :submit, "Entrar" %>
+	<% end %>
+</div>

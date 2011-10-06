@@ -1,17 +1,18 @@
-<h3>Editar usuário</h3>
-<br/>
+<% title("Editar usuário") %>
 
-<%= simple_form_for @user, :html => { :multipart => true} do |f| %>
-    <%= f.input :name,  :label => "Nome" %>
-    <%= f.input :email, :lavel => "E-mail" %>
-    <%= f.input :avatar %>
-    <%= f.button :submit, "Atualizar" %>
-<% end %>
+<div class="user">
+	<%= simple_form_for @user, :html => { :multipart => true} do |f| %>
+	    <%= f.input :name,  :label => "Nome" %>
+	    <%= f.input :email, :lavel => "E-mail" %>
+	    <%= f.input :avatar %>
+	    <%= f.button :submit, "Atualizar" %>
+	<% end %>
 
-<br/>
-<p>
-	<%= link_to "Alterar senha", edit_user_registration_path %> |
-	<%= link_to "Deletar conta", registration_path(@user),
-	 	:confirm => "Tem certeza que deseja remover sua conta?", :method => :delete %> |
-		<%= link_to "Voltar", :back %>
-</p>
+	<br/>
+	<p>
+		<%= link_to "Alterar senha", edit_user_registration_path %> |
+		<%= link_to "Deletar conta", registration_path(@user),
+		 	:confirm => "Tem certeza que deseja remover sua conta?", :method => :delete %> |
+			<%= link_to "Voltar", :back %>
+	</p>
+</div>

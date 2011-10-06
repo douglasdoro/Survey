@@ -1,16 +1,4 @@
-<div class="surveys">
-  <h3><%= @survey.name.titleize %></h3> 	
-	<small><%= @survey.description.titleize %></small>
-	<%= render 'survey_links', :survey => @survey %>
-	<% @questions.each do |question| %>
-		<div class="questions">
-			<h4>Pergunta:</h4>
-			<%= question.content.titleize %>
-	    <% question.answers.each do |answer| %>
-				<div class="answers">
-					<%= answer.content.titleize %>
-				</div>
-			<% end %>
-		</div>
-	<% end %>
-</div>
+<%= title("Pesquisa: #{@survey.name}") %>
+
+<%= render 'survey', :survey => @survey %>
+

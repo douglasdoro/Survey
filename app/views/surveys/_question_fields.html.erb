@@ -1,8 +1,12 @@
 <div class="fields">
-	<%= link_to_remove_fields "remove", f %>
-	<%= f.input :content, :label => "Pergunta" %>
+	<div class="question-field">
+		<%= f.input :content, :label => "Pergunta", :wrapper_html => { :class => 'question' } %>
+		<%= link_to_remove_fields "remover", f %>
+	</div>
 	<%= f.simple_fields_for :answers do |builder| %>
 		<%= render 'answer_fields', :f => builder %>
 	<% end %>
-	<%= link_to_add_fields "Adicionar resposta", f, :answers %>
+	<div class="add-answer">
+		<%= link_to_add_fields "Adicionar resposta", f, :answers %>
+	</div>
 </div>

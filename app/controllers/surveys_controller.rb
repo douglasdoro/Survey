@@ -10,13 +10,14 @@ class SurveysController < ApplicationController
 
   def show
     @survey = Survey.find(params[:id])
+    @choice = Choice.new        
     @questions = @survey.questions.includes(:answers) 
   end
 
   def new
     @survey = Survey.new
     question = @survey.questions.build 
-    question.answers.build
+    2.times { question.answers.build }
   end
 
   def create

@@ -54,46 +54,26 @@ td, input[type=submit] { font-family: verdana, arial, helvetica, sans-serif; fon
 .bar span 			{ border: none; background: #CCCC00; display: block; }
 .percent    		{ display: inline-block; }
 
+/* User */
+.user, .survey-form { margin: 20px 10px; }
+
+/* New Survey */
+.question-field, .answer-field { position: relative; }
+
+.remove_field { position: absolute; top:0; right:0; }
+
+.add-answer 	 { clear: both; padding-left: 120px; margin-bottom: 10px; }
+.add-question  { padding-left: 120px; margin: 10px 0; }
+
+.fields { width: 460px; }
 
 /* Simple form */
-.simple_form label {
-  float: left;
-  width: 100px;
-  text-align: right;
-  margin: 2px 10px;
-}
+.simple_form label 		 { float: left; width: 100px; text-align: right; margin: 2px 10px; }
+.simple_form div.input { margin-bottom: 10px; clear: both; }
+.simple_form textarea  { width: 270px; }
+.simple_form div.boolean, .simple_form input[type='submit'] { margin-left: 120px; }
+.simple_form div.boolean label, .simple_form label.collection_radio { float: none; margin: 0; }
 
-.simple_form div.input {
-  margin-bottom: 10px;
-}
-
-.simple_form div.boolean, .simple_form input[type='submit'] {
-  margin-left: 120px;
-}
-
-.simple_form div.boolean label, .simple_form label.collection_radio {
-  float: none;
-  margin: 0;
-}
-
-.simple_form label.collection_radio {
-  margin-right: 10px;
-  margin-left: 2px;
-}
-
-.simple_form .error {
-  clear: left;
-  margin-left: 120px;
-  font-size: 12px;
-  color: #D00;
-  display: block;
-}
-
-.simple_form .hint {
-  clear: left;
-  margin-left: 120px;
-  font-size: 12px;
-  color: #555;
-  display: block;
-  font-style: italic;
-}
+.simple_form label.collection_radio { margin-right: 10px; margin-left: 2px; }
+.simple_form .error { clear: left; margin-left: 120px; font-size: 12px; color: #D00; display: block; }
+.simple_form .hint  { clear: left;margin-left: 120px; font-size: 12px; color: #555; display: block; font-style: italic; }
